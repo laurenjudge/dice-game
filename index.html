@@ -2,48 +2,76 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
-        <link href="https://fonts.googleapis.com/css?family=Lato:100,300,600" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,600" rel="stylesheet" type="text/css">
         <link href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" rel="stylesheet" type="text/css">
         <link type="text/css" rel="stylesheet" href="style.css">
         
-        <title>Pig Game</title>
+        <title>Dice Game</title>
     </head>
 
     <body>
-        <div class="wrapper clearfix">
-            <div class="player-0-panel active">
-                <div class="player-name" id="name-0">Player 1</div>
-                <div class="player-score" id="score-0">43</div>
+        <div class="container">
+            <div class="player-panel active" id="player-0-panel">
+                <h1 class="title" id="name-0">Player 1</h1>
+                <p class="player-score" id="score-0">0</p>
                 <div class="player-current-box">
-                    <div class="player-current-label">Current</div>
-                    <div class="player-current-score" id="current-0">11</div>
+                    <div class="player-current-label">Round Score</div>
+                    <div class="player-current-score" id="current-0">0</div>
                 </div>
             </div>
-            
-            <div class="player-1-panel">
-                <div class="player-name" id="name-1">Player 2</div>
-                <div class="player-score" id="score-1">72</div>
+
+            <div class="player-panel" id="player-1-panel">
+                <h1 class="title" id="name-1">Player 2</h1>
+                <p class="player-score" id="score-1">0</p>
                 <div class="player-current-box">
-                    <div class="player-current-label">Current</div>
+                    <div class="player-current-label">Round Score</div>
                     <div class="player-current-score" id="current-1">0</div>
                 </div>
             </div>
-            
-            <div class="winning-div">
-                <input type="text" class="winning-input" placeholder="100">
-                <button class="btn-points">Okay</button>
-                <div id="winning-score">Winning Score:</div>
-            </div>
 
-            <button class="btn-new"><i class="ion-ios-plus-outline"></i>New game</button>
-            <button class="btn-roll"><i class="ion-ios-loop"></i>Roll dice</button>
-            <button class="btn-hold"><i class="ion-ios-download-outline"></i>Hold</button>
-            
-            <div class="dice-container">
-                <img src="dice-5.png" alt="Dice" class="dice" id="dice-1">
-                <img src="dice-5.png" alt="Dice" class="dice" id="dice-2">
+            <div class="center-panel">
+                    <button class="btn-new"><i class="ion-ios-plus-outline icon-primary"></i>New game</button>
+                    <button class="btn-rules" id="modal-trigger" data-popup-trigger="modal1">
+                        <i class="ion-document icon-primary"></i>Rules
+                    </button>
+                
+                    <div class="dice-container" style="opacity: 0;">
+                        <img src="dice-5.png" alt="Dice" class="dice" id="dice-1">
+                        <img src="dice-5.png" alt="Dice" class="dice" id="dice-2">
+                    </div>
+    
+                    <button class="btn-roll"><i class="ion-ios-loop icon-primary"></i>Roll dice</button>
+                    <button class="btn-hold"><i class="ion-ios-download-outline icon-primary"></i>Hold</button>
+
+                <div class="winning-container">
+                    <input type="number" class="winning-input" placeholder="Change winning score">
+                    <button class="btn-points">Okay</button>
+                    <div id="winning-score-message">Winning Score:</div>
+                </div>
             </div>
         </div>
+
+        <div class="modal" id="modal1">
+            <div class="modal-content">
+              <button class="modal-close-button">
+                <i class="ion-close"></i>
+              </button>
+                <div class="modal-text">
+                    <h1 class="title">Rules</h1>
+                    <ul class="modal-list">
+                        <li class="modal-list-item">Before starting a game, you can change the <i>winning score</i> at the bottom of the page</li>
+                        <li class="modal-list-item">The game has 2 players, & it's played in rounds.</li>
+                        <li class="modal-list-item">For each turn, a player rolls a dice as many times as they wish. Each result gets added to their <i>Round Score</i></li>
+                        <li class="modal-list-item"><b>But</b>, if the player roles a <b>1</b>, all their <i>Round Score</i> gets lost. After this, it's the next person's turn.</li>
+                        <li class="modal-list-item">
+                            The player can choose to "<b>Hold</b>" which means that their <i>Round Score</i> gets added to their <i>Total Score</i>. After that, 
+                            it's the next player's turn
+                        </li>
+                        <li class="modal-list-item">The first player to total the <i>Winning Score</i> wins the game</li>
+                    </ul>
+                </div>
+            </div>
+          </div>
         
         <script src="script.js"></script>
     </body>
