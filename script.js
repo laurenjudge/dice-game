@@ -111,8 +111,8 @@
         //Remove the 'Winner'
         document.getElementById('name-0').textContent = 'Player 1';
         document.getElementById('name-1').textContent = 'Player 2';
-        document.querySelector('.player-panel').classList.remove('winner');
-        document.querySelector('.player-panel').classList.remove('active');
+        document.getElementById('player-0-panel').classList.remove('winner', 'active');
+        document.getElementById('player-1-panel').classList.remove('winner', 'active');
         //Remove the class bc if it's not removed, the class will duplicate
         document.getElementById('player-0-panel').classList.add('active');
     }
