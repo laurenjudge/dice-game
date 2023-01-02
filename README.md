@@ -9,4 +9,4 @@ it's the next player's turn
 
 ## View Live
 
-http://dice-game.s3-website-ap-southeast-2.amazonaws.com/
+http://js-dice-game.s3-website-ap-southeast-2.amazonaws.com/
